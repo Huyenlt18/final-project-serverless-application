@@ -4,7 +4,7 @@
   "type": "object",
   "properties": {
     "name": {
-      "type": "string"
+      "$ref": "#/definitions/nonEmptyString"
     },
     "dueDate": {
       "type": "string"
@@ -14,5 +14,11 @@
     "name",
     "dueDate"
   ],
+  "definitions": {
+    "nonEmptyString": {
+        "type": "string",
+        "minLength": 1
+    }
+  },
   "additionalProperties": false
 }

@@ -95,7 +95,7 @@ export class CarsAccess {
             Bucket: this.bucketName,
             Key: carId
         }
-        console.log("carId deleted : " +carId);
+        logger.info("carId deleted : " +carId);
         await this.s3.deleteObject(params, function (err, data) {
             if (err) logger.error('error deleting', err.stack)
             else logger.info(data)
