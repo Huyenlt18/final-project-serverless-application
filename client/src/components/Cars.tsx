@@ -66,6 +66,7 @@ export class Cars extends React.PureComponent<CarsProps, CarsState> {
       this.setState({
         cars: this.state.cars.filter(car => car.carId !== carId)
       })
+      console.log("carId" + carId);
     } catch {
       alert('Car deletion failed')
     }
