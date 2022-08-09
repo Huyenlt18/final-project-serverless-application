@@ -126,6 +126,7 @@ export class Cars extends React.PureComponent<CarsProps, CarsState> {
               content: 'New Car',
               onClick: this.onCarCreate
             }}
+            value = {this.state.newCarName}
             fluid
             actionPosition="left"
             placeholder="To change the world..."
