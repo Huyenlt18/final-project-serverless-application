@@ -14,6 +14,7 @@ export const handler = middy(
       const updatedCar: UpdateCarRequest = JSON.parse(event.body)
       const userId = getUserId(event)
       const resultItem = await updateCar(userId, carId, updatedCar)
+      //verify name of car must not be empty
       if(resultItem.name.trim()==""){
         return {
           statusCode: 400,

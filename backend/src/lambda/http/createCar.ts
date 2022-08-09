@@ -14,6 +14,7 @@ export const handler = middy(
       //  Implement creating a new Car item
       const userId = getUserId(event)
       const item = await createCar(userId, newCar)
+      // verify create empty name of car
       if(item.name.trim()==""){
         return {
           statusCode: 400,

@@ -14,6 +14,7 @@ export const handler = middy(
     try {
       const userId = getUserId(event)
       await deleteCar(userId, carId)
+      logger.info("deleteCar(userId, carId)" + userId +"carrd"+ carId);
       return {
         statusCode: 201,
         headers: {

@@ -90,13 +90,14 @@ export class CarsAccess {
             ExpressionAttributeValues: {
                 ':carId': carId
             }
-        })
+        }).promise()
          const params = {
             Bucket: this.bucketName,
             Key: carId
         }
+        console.log("carId deleted : " +carId);
         await this.s3.deleteObject(params, function (err, data) {
-            if (err) logger.info('error deleting', err.stack)
+            if (err) logger.error('error deleting', err.stack)
             else logger.info(data)
         }).promise()
     }
